@@ -6503,6 +6503,7 @@ message MetricsEvent {
     // END OF AOSP CONSTANTS
 	// Beast constant
     BEAST = 2000;
+    TILE_LOCATION_DETAIL = 2001;
 
   }
 }
