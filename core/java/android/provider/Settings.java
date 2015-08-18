@@ -9257,6 +9257,13 @@ public final class Settings {
          * @hide
          */
         public static final String PULSE_APPS_BLACKLIST = "pulse_apps_blacklist";
+		
+        /**
+         * Lockscreen Visualizer
+         *
+         * @hide
+         */
+        public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
 
         /**
          * This are the settings to be backed up.
