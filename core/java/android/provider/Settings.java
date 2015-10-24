@@ -5213,6 +5213,12 @@ public final class Settings {
 
         /** @hide */
         private static final Validator FORCE_FULLSCREEN_CUTOUT_APPS_VALIDATOR = ANY_STRING_VALIDATOR;
+		
+        /**
+         * Whether to show media art on lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
