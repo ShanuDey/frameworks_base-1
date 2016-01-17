@@ -612,6 +612,9 @@
     <!-- Ambient Indication -->
     <protected-broadcast android:name="com.android.internal.util.lean.ambient.play.AMBIENT_PLAY_SONG_MATCH" />
 
+    <!-- Used for long press power torch feature - automatic turn off on timeout -->
+    <protected-broadcast android:name="com.android.server.policy.PhoneWindowManager.ACTION_TORCH_OFF" />
+
     <!-- ====================================================================== -->
     <!--                          RUNTIME PERMISSIONS                           -->
     <!-- ====================================================================== -->
