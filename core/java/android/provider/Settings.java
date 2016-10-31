@@ -4716,6 +4716,22 @@ public final class Settings {
          * @hide
          */
         public static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+		
+        /**
+         * Number of qs columns on landscape orientation
+         * @hide
+         */
+        public static final String OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE = "qs_layout_columns_landscape";
+         /** @hide */
+        private static final Validator OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR =
+                ANY_STRING_VALIDATOR;
+         /**
+         * @hide
+         */
+        public static final String OMNI_QS_LAYOUT_COLUMNS = "qs_layout_columns";
+         /** @hide */
+        private static final Validator OMNI_QS_LAYOUT_COLUMNS_VALIDATOR =
+                ANY_STRING_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -4786,7 +4802,9 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_STYLE,
             STATUSBAR_CLOCK_DATE_FORMAT,
             ACCELEROMETER_ROTATION_ANGLES,
-            NOTIFICATION_LIGHT_PULSE
+            NOTIFICATION_LIGHT_PULSE,
+            OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
+            OMNI_QS_LAYOUT_COLUMNS
         };
 
         /**
@@ -4917,6 +4935,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(WEATHER_LOCKSCREEN_UNIT);
             PRIVATE_SETTINGS.add(QS_HEADER_STYLE);
             PRIVATE_SETTINGS.add(SYSTEM_THEME_STYLE);
+            PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS);
         }
 
 
@@ -5026,6 +5046,9 @@ public final class Settings {
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
             VALIDATORS.put(WEATHER_LOCKSCREEN_UNIT, WEATHER_LOCKSCREEN_UNIT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
+            VALIDATORS.put(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
+                    OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
+            VALIDATORS.put(OMNI_QS_LAYOUT_COLUMNS, OMNI_QS_LAYOUT_COLUMNS_VALIDATOR);
         }
 
         /**
@@ -13401,6 +13424,7 @@ public final class Settings {
          * @hide
          */
         public static final String SHOW_CPU_OVERLAY = "show_cpu_overlay";
+		
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
