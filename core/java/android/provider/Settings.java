@@ -4788,6 +4788,11 @@ public final class Settings {
 
         private static final Validator OMNI_BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
+				
+        /**
+         * @hide
+         */
+        public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
