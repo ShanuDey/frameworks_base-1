@@ -17,5 +17,12 @@
     <dimen name="status_bar_battery_circle_icon_height">20.5dp</dimen>
      <!-- Width of the battery circle icon in the status bar. -->
     <dimen name="status_bar_battery_circle_icon_width">20.5dp</dimen>
+	
+    <!-- Floating action button -->
+    <dimen name="floating_action_button_height">54dp</dimen>
+    <dimen name="floating_action_button_width">54dp</dimen>
+    <dimen name="floating_action_button_translation_z">12dp</dimen>
+    <dimen name="floating_action_button_margin_side">32dp</dimen>
+    <dimen name="floating_action_button_margin_bottom">46dp</dimen>
 
  </resources>	
