@@ -259,4 +259,7 @@
   <java-symbol type="anim" name="q_wallpaper_intra_close_exit" /> 
   <java-symbol type="anim" name="q_launch_task_behind_source" />
   <java-symbol type="anim" name="q_launch_task_behind_target" />
+
+  <!-- Whether the device supports Smart Pixels -->
+  <java-symbol type="bool" name="config_enableSmartPixels" />
 </resources>
