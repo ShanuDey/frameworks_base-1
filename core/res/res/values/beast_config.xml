@@ -157,5 +157,9 @@
 	
     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">false</bool>
+	
+     <!-- Does the notification LED support multiple colors?
+	   Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">false</bool>
 
 </resources>
