@@ -5005,6 +5005,14 @@ public final class Settings {
          * @hide
          */
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
+		
+        /**
+         * @hide
+         */
+        public static final String USE_OLD_MOBILETYPE = "use_old_mobiletype";
+
+        /** @hide */
+        private static final Validator USE_OLD_MOBILETYPE_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5086,7 +5094,8 @@ public final class Settings {
             OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
             STATUS_BAR_SHOW_TICKER,
             STATUS_BAR_TICKER_ANIMATION_MODE,
-            STATUS_BAR_TICKER_TICK_DURATION
+            STATUS_BAR_TICKER_TICK_DURATION,
+            USE_OLD_MOBILETYPE
         };
 
         /**
@@ -5228,6 +5237,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUS_BAR_TICKER_ANIMATION_MODE);
             PRIVATE_SETTINGS.add(STATUS_BAR_TICKER_TICK_DURATION);
             PRIVATE_SETTINGS.add(ON_THE_GO_CAMERA);
+            PRIVATE_SETTINGS.add(USE_OLD_MOBILETYPE);
         }
 
 
@@ -5357,6 +5367,7 @@ public final class Settings {
             VALIDATORS.put(GLOBAL_ACTIONS_ONTHEGO,GLOBAL_ACTIONS_ONTHEGO_VALIDATOR);
             VALIDATORS.put(ON_THE_GO_SERVICE_RESTART,ON_THE_GO_SERVICE_RESTART_VALIDATOR);
             VALIDATORS.put(ON_THE_GO_CAMERA,ON_THE_GO_CAMERA_VALIDATOR);
+            VALIDATORS.put(USE_OLD_MOBILETYPE, USE_OLD_MOBILETYPE_VALIDATOR);
         }
 
         /**
