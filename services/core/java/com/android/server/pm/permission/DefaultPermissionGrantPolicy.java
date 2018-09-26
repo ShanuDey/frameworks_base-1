@@ -1010,6 +1010,8 @@ public final class DefaultPermissionGrantPolicy {
             grantRuntimePermissions(dialerPackage, SMS_PERMISSIONS, userId);
             grantRuntimePermissions(dialerPackage, MICROPHONE_PERMISSIONS, userId);
             grantRuntimePermissions(dialerPackage, CAMERA_PERMISSIONS, userId);
+            grantRuntimePermissions(dialerPackage, STORAGE_PERMISSIONS, userId);
+            grantRuntimePermissions(dialerPackage, LOCATION_PERMISSIONS, userId);
         }
     }
 
