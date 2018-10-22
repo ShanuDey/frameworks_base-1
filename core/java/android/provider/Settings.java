@@ -4542,6 +4542,12 @@ public final class Settings {
          public static final String SCREENSHOT_SHUTTER_SOUND = "screenshot_shutter_sound";
 
         /**
+         * Whether to show VoLTE icon or not
+         * @hide
+         */
+        public static final String SHOW_VOLTE_ICON = "volte_icon";
+
+        /**
          * Whether to mute annoying notifications
          * @hide
          */
