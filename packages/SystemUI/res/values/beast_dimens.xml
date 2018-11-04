@@ -12,6 +12,9 @@
       limitations under the License.
  -->
  <resources>
+ 
+	<!-- Sets a custom extra padding for the QS icons and statusbar date -->
+	<dimen name="qs_items_padding">8dp</dimen>
 
     <!-- Height of the battery circle icon in the status bar. -->
     <dimen name="status_bar_battery_circle_icon_height">20.5dp</dimen>
@@ -29,5 +32,11 @@
     <dimen name="recents_membar_spacing">12dp</dimen>
 	
     <dimen name="qs_tile_height_wo_label">48dp</dimen>
+	
+    <!-- Status bar notification ticker -->
+    <dimen name="ticker_start_padding">6dp</dimen>
+    <dimen name="ticker_icon_end_margin">4dp</dimen>
+    <dimen name="ticker_text_top_padding">2dp</dimen>
+    <dimen name="ticker_text_end_padding">10dp</dimen>
 
  </resources>	
