@@ -5266,6 +5266,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_HEADER_STYLE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                     Settings.Secure.PULSE_APPS_BLACKLIST),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5291,8 +5294,10 @@ public class StatusBar extends SystemUI implements DemoMode,
                     updateAccents();
             } else if (uri.equals(Settings.Secure.getUriFor(Settings.Secure.SYSUI_ROUNDED_FWVALS))) {
                 updateCorners();
+            } else if (uri.equals(Settings.Secure.getUriFor(Settings.Secure.PULSE_APPS_BLACKLIST))) {
+                setPulseBlacklist();
+	    }
                 update();
-        }
     }
 
          public void update() {
@@ -5302,6 +5307,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setHeadsUpStoplist();
             setHeadsUpBlacklist();
             updateCorners();
+	    setPulseBlacklist();
         }
     }
 
@@ -5315,6 +5321,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         final String blackString = Settings.System.getString(mContext.getContentResolver(),
                     Settings.System.HEADS_UP_BLACKLIST_VALUES);
         splitAndAddToArrayList(mBlacklist, blackString, "\\|");
+    }
+	
+    private void setPulseBlacklist() {
+        String blacklist = Settings.Secure.getStringForUser(mContext.getContentResolver(),
+            Settings.Secure.PULSE_APPS_BLACKLIST, UserHandle.USER_CURRENT);
+        getMediaManager().setPulseBlacklist(blacklist);
     }
 
     private void setLockscreenDoubleTapToSleep() {
