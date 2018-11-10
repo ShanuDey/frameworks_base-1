@@ -5037,7 +5037,23 @@ public final class Settings {
         public static final String SCREEN_STATE_ON_DELAY = "screen_state_on_delay";
 		
         /**
+<<<<<<< HEAD
          * Whether to disable showing arrows in network traffic indicators
+=======
+         * Whether to use icon pack for Recents
+         * @hide
+         */
+        public static final String RECENTS_ICON_PACK = "recents_icon_pack";
+
+        /**
+         * Settings to backup. This is here so that it's in the same place as the settings
+         * keys and easy to update.
+         *
+         * NOTE: Settings are backed up and restored in the order they appear
+         *       in this array. If you have one setting depending on another,
+         *       make sure that they are ordered appropriately.
+         *
+>>>>>>> 9cc854ae80d... Stock Recents/Overview icon pack support [2/3]
          * @hide
          */
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";

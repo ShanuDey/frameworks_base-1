@@ -218,5 +218,7 @@
   <java-symbol type="string" name="config_SmartChargingSysfsNode" />
   <java-symbol type="string" name="config_SmartChargingSupspendValue" />
   <java-symbol type="string" name="config_SmartChargingResumeValue" />
+  
+  <java-symbol type="drawable" name="adaptive_icon_drawable_wrapper" />
 
 </resources>
