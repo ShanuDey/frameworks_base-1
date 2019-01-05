@@ -4179,8 +4179,8 @@ public final class Settings {
         /**
          * Setting to determine whether or not to show the battery percentage in the status bar.
          *    0 - Don't show percentage
-         *    1 - Show percentage outside
-         *    2 - Show percentage inside
+         *    1 - Show percentage outside the battery icon
+         *    2 - Show percentage inside the battery icon
          * @hide
          */
         public static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
@@ -4194,6 +4194,9 @@ public final class Settings {
          *  @hide
          */
         public static final String SYSTEMUI_RECENTS_MEM_DISPLAY = "systemui_recents_mem_display";
+        private static final Validator SHOW_BATTERY_PERCENT_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
+
 
         /**
          * 0 - Default
@@ -9815,6 +9818,29 @@ public final class Settings {
         public static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer";
 
         /**
+         * Paranoid Android SecureSettings additions starts
+         */
+
+        /**
+         * Display style of the status bar battery information
+         * 0: Display the battery an icon in portrait mode
+         * 1: Display the battery as a circle
+         * 2: Display the battery as text
+         * 3: Do not display the battery
+         * default: 0
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+
+        /** @hide */
+        private static final Validator STATUS_BAR_BATTERY_STYLE_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 3);
+
+        /**
+         * Paranoid Android SecureSettings additions ends
+         */
+
+        /**
          * This are the settings to be backed up.
          *
          * NOTE: Settings are backed up and restored in the order they appear
@@ -9964,6 +9990,11 @@ public final class Settings {
             FLING_KEYBOARD_CURSORS,
             PULSE_AUTO_COLOR,
             SMARTBAR_DOUBLETAP_SLEEP
+=======
+            WIFI_DISCONNECT_DELAY_DURATION,
+            // Paranoid Android additions starts
+            STATUS_BAR_BATTERY_STYLE,
+>>>>>>> 0b09efa6399... base: Implement battery styles (1/2)
         };
 
         /**
@@ -10113,6 +10144,7 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_BATTERY_STYLE, STATUS_BAR_BATTERY_STYLE_VALIDATOR);
             VALIDATORS.put(LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS, BOOLEAN_VALIDATOR);
             VALIDATORS.put(LOCK_SCREEN_SHOW_NOTIFICATIONS, BOOLEAN_VALIDATOR);
+<<<<<<< HEAD
             VALIDATORS.put(WIFI_DISCONNECT_DELAY_DURATION, WIFI_DISCONNECT_DELAY_DURATION_VALIDATOR);
             VALIDATORS.put(VOLUME_LINK_NOTIFICATION, VOLUME_LINK_NOTIFICATION_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_HEIGHT_LANDSCAPE, NAVIGATION_BAR_HEIGHT_LANDSCAPE_VALIDATOR);
@@ -10168,6 +10200,9 @@ public final class Settings {
             VALIDATORS.put(FLING_KEYBOARD_CURSORS, FLING_KEYBOARD_CURSORS_VALIDATOR);
             VALIDATORS.put(PULSE_AUTO_COLOR, PULSE_AUTO_COLOR_VALIDATOR);
             VALIDATORS.put(SMARTBAR_DOUBLETAP_SLEEP, SMARTBAR_DOUBLETAP_SLEEP_VALIDATOR);
+
+            // Paranoid Android additions starts
+            VALIDATORS.put(STATUS_BAR_BATTERY_STYLE , STATUS_BAR_BATTERY_STYLE_VALIDATOR);
         }
 
         /**
