@@ -144,7 +144,7 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.NotificationVisibility;
 import com.android.internal.statusbar.StatusBarIcon;
-import com.android.internal.util.lean.LeanUtils;
+import com.android.internal.util.beast.BeastUtils;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.internal.util.hwkeys.PackageMonitor;
@@ -5048,7 +5048,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (showNavBar != -1){
             boolean showNavBarBool = showNavBar == 1;
             if (showNavBarBool !=  mShowNavBar){
-                   mShowNavBar = LeanUtils.deviceSupportNavigationBar(mContext);
+                   mShowNavBar = BeastUtils.deviceSupportNavigationBar(mContext);
                   if (DEBUG) Log.v(TAG, "updateNavigationBar=" + mShowNavBar);
                    if (mShowNavBar) {
                      if (mNavigationBarView == null) {

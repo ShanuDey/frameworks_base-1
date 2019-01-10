@@ -93,7 +93,7 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.TelephonyProperties;
-import com.android.internal.util.lean.LeanUtils;
+import com.android.internal.util.beast.BeastUtils;
 import com.android.internal.util.EmergencyAffordanceManager;
 import com.android.internal.util.ScreenshotHelper;
 import com.android.internal.widget.LockPatternUtils;
@@ -676,7 +676,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    LeanUtils.takeScreenshot(true);
+                    BeastUtils.takeScreenshot(true);
                 }
             }, 500);
         }
@@ -687,7 +687,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    LeanUtils.takeScreenshot(false);
+                    BeastUtils.takeScreenshot(false);
                 }
             }, 500);
             return true;

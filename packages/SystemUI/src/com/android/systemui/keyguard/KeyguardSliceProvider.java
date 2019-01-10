@@ -54,7 +54,7 @@ import androidx.slice.builders.ListBuilder;
 import androidx.slice.builders.ListBuilder.RowBuilder;
 import androidx.slice.builders.SliceAction;
 
-import com.android.internal.util.lean.weather.WeatherClient;
+import com.android.internal.util.beast.weather.WeatherClient;
 
 /**
  * Simple Slice provider that shows the current date.
