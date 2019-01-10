@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.lean;
+package com.android.internal.util.beast;
 
 import android.Manifest;
 import android.app.ActivityManager;
@@ -57,7 +57,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 /**
  * Some custom utilities
  */
-public class LeanUtils {
+public class BeastUtils {
 
     public static final String INTENT_SCREENSHOT = "action_take_screenshot";
     public static final String INTENT_REGION_SCREENSHOT = "action_take_region_screenshot";

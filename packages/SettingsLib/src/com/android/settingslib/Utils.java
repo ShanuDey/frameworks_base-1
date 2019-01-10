@@ -30,8 +30,8 @@ import com.android.settingslib.drawable.UserIconDrawable;
 import com.android.settingslib.wrapper.LocationManagerWrapper;
 import java.text.NumberFormat;
 
-import com.android.internal.util.lean.ambient.play.AmbientPlayHistoryManager;
-import com.android.internal.util.lean.weather.WeatherClient;
+import com.android.internal.util.beast.ambient.play.AmbientPlayHistoryManager;
+import com.android.internal.util.beast.weather.WeatherClient;
 
 public class Utils {
 

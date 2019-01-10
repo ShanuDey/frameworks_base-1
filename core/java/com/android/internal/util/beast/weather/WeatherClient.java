@@ -17,7 +17,7 @@
  *
  */
 
-package com.android.internal.util.lean.weather;
+package com.android.internal.util.beast.weather;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
