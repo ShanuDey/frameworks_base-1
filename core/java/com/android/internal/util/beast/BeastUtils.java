@@ -49,6 +49,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 
 import java.util.List;
+import java.util.Locale;
 
 import com.android.internal.statusbar.IStatusBarService;
 import android.content.pm.PackageInfo;
@@ -61,6 +62,11 @@ public class BeastUtils {
 
     public static final String INTENT_SCREENSHOT = "action_take_screenshot";
     public static final String INTENT_REGION_SCREENSHOT = "action_take_region_screenshot";
+	
+    public static boolean isChineseLanguage() {
+       return Resources.getSystem().getConfiguration().locale.getLanguage().startsWith(
+               Locale.CHINESE.getLanguage());
+    }
 
     public static void switchScreenOff(Context ctx) {
         PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
