@@ -2870,7 +2870,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             mVolumeAnswer = (Settings.System.getIntForUser(resolver,
                     Settings.System.ANSWER_VOLUME_BUTTON_BEHAVIOR_ANSWER, 0, UserHandle.USER_CURRENT) == 1);
 
-<<<<<<< HEAD
             boolean doShowNavbar = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_VISIBLE,
                     ActionUtils.hasNavbarByDefault(mContext) ? 1 : 0,
@@ -2880,12 +2879,10 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
             mUseGestureButton = Settings.System.getIntForUser(resolver,
                     Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, 0,
-=======
-            mHasNavigationBar = AEXUtils.deviceSupportNavigationBar(mContext);
-
+                    UserHandle.USER_CURRENT) != 0;
+					
             mVolumeMusicControl = Settings.System.getIntForUser(resolver,
                     Settings.System.VOLUME_BUTTON_MUSIC_CONTROL, 0,
->>>>>>> a9ade2c3155... base: volume key music control [1/2]
                     UserHandle.USER_CURRENT) != 0;
         }
         synchronized (mWindowManagerFuncs.getWindowManagerLock()) {
