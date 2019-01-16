@@ -149,4 +149,8 @@
     <integer name="config_proximityCheckTimeout">350</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
+    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
+         before setting power profiles on boot. -->
+    <bool name="config_waitForMpctlOnBoot">false</bool>
+
 </resources>
