@@ -40,6 +40,7 @@ import com.android.systemui.qs.tiles.LteTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
+import com.android.systemui.qs.tiles.ScreenrecordTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.ScreenStabilizationTile;
 import com.android.systemui.qs.tiles.UserTile;
@@ -108,6 +109,8 @@ public class QSFactoryImpl implements QSFactory {
                 return new LteTile(mHost);
             case "sound":
                 return new SoundTile(mHost);
+            case "screenrecord":
+                return new ScreenrecordTile(mHost);
 	    case "screenstabilization":
 		return new ScreenStabilizationTile(mHost);
         }
