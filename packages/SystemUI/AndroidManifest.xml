@@ -309,7 +309,7 @@
 
         <!-- started from PhoneWindowManager
              TODO: Should have an android:permission attribute -->
-        <service android:name=".benzo.screenrecord.TakeScreenrecordService"
+        <service android:name=".beast.screenrecord.TakeScreenrecordService"
             android:process=":screenrecord"
             android:exported="false" />
 
