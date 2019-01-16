@@ -34,6 +34,7 @@ import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
 import com.android.systemui.qs.tiles.HotspotTile;
+import com.android.systemui.qs.tiles.HWKeysTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.LteTile;
@@ -111,8 +112,10 @@ public class QSFactoryImpl implements QSFactory {
                 return new SoundTile(mHost);
             case "screenrecord":
                 return new ScreenrecordTile(mHost);
-	    case "screenstabilization":
-		return new ScreenStabilizationTile(mHost);
+			case "screenstabilization":
+				return new ScreenStabilizationTile(mHost);
+            case "hwkeys":
+                return new HWKeysTile(mHost);
         }
 
         // Intent tiles.
