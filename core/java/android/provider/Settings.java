@@ -4675,22 +4675,6 @@ public final class Settings {
          * @hide
          */
         public static final String ACCENT_PICKER = "accent_picker";
-
-        /**
-         * @hide
-         */
-        public static final String FULL_GESTURE_NAVBAR_DT2S = "full_gesture_navbar_dt2s";
-
-        /**
-         * @hide
-         */
-        public static final String FULL_GESTURE_NAVBAR = "full_gesture_navbar";
-
-        /**
-         * Unlock keystore with fingerprint after reboot
-         * @hide
-         */
-        public static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 		
         /**
          * Hold current font name and name of the originating package Uses "|" as a delimiter
