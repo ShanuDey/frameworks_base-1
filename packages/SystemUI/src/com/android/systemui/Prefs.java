@@ -43,6 +43,7 @@ public final class Prefs {
             Key.DND_NONE_SELECTED,
             Key.DND_FAVORITE_ZEN,
             Key.QS_HOTSPOT_ADDED,
+            Key.QS_GAMING_MODE_DIALOG_SHOWN,
             Key.QS_DATA_SAVER_ADDED,
             Key.QS_DATA_SAVER_DIALOG_SHOWN,
             Key.QS_INVERT_COLORS_ADDED,
@@ -74,6 +75,7 @@ public final class Prefs {
         String DND_NONE_SELECTED = "DndNoneSelected";
         String DND_FAVORITE_ZEN = "DndFavoriteZen";
         String QS_DATA_SAVER_DIALOG_SHOWN = "QsDataSaverDialogShown";
+        String QS_GAMING_MODE_DIALOG_SHOWN = "QsGamingModeDialogShown";
         @Deprecated
         String QS_HOTSPOT_ADDED = "QsHotspotAdded";
         @Deprecated
