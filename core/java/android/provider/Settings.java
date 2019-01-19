@@ -4575,40 +4575,6 @@ public final class Settings {
         /** @hide */
         public static final Validator MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD_VALIDATOR = ANY_STRING_VALIDATOR;
 
-
-        /**
-         * Whether Ambient Play enabled/disabled
-         *
-         * @hide
-         */
-        public static final String AMBIENT_RECOGNITION = "ambient_recognition";
-
-         /** @hide */
-        private static final Validator AMBIENT_RECOGNITION_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-         /**
-         * Whether Ambient Play is shown on the lockscreen
-         *
-         * @hide
-         */
-        public static final String AMBIENT_RECOGNITION_KEYGUARD = "ambient_recognition_keyguard";
-
-         /** @hide */
-        private static final Validator AMBIENT_RECOGNITION_KEYGUARD_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
-         /**
-         * Whether Ambient Play notification is enabled
-         *
-         * @hide
-         */
-        public static final String AMBIENT_RECOGNITION_NOTIFICATION = "ambient_recognition_notification";
-
-         /** @hide */
-        private static final Validator AMBIENT_RECOGNITION_NOTIFICATION_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
         /**
          * Whether to blink flashlight for incoming calls
          * 0 = Disabled (Default)
@@ -4966,9 +4932,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD);
             PRIVATE_SETTINGS.add(NAVIGATION_BAR_SHOW);
             PRIVATE_SETTINGS.add(QS_TILE_STYLE);
-            PRIVATE_SETTINGS.add(AMBIENT_RECOGNITION);
-            PRIVATE_SETTINGS.add(AMBIENT_RECOGNITION_KEYGUARD);
-            PRIVATE_SETTINGS.add(AMBIENT_RECOGNITION_NOTIFICATION);
             PRIVATE_SETTINGS.add(STATUS_BAR_CLOCK);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_STYLE);
             PRIVATE_SETTINGS.add(STATUS_BAR_CLOCK_SECONDS);
@@ -5080,9 +5043,6 @@ public final class Settings {
             VALIDATORS.put(SHOW_BATTERY_PERCENT, SHOW_BATTERY_PERCENT_VALIDATOR);
             VALIDATORS.put(MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_SHOW, NAVIGATION_BAR_SHOW_VALIDATOR);
-            VALIDATORS.put(AMBIENT_RECOGNITION, AMBIENT_RECOGNITION_VALIDATOR);
-            VALIDATORS.put(AMBIENT_RECOGNITION_KEYGUARD, AMBIENT_RECOGNITION_KEYGUARD_VALIDATOR);
-            VALIDATORS.put(AMBIENT_RECOGNITION_NOTIFICATION, AMBIENT_RECOGNITION_NOTIFICATION_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK, STATUS_BAR_CLOCK_VALIDATOR);
             VALIDATORS.put(STATUSBAR_CLOCK_STYLE, STATUSBAR_CLOCK_STYLE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_CLOCK_SECONDS, STATUS_BAR_CLOCK_SECONDS_VALIDATOR);
