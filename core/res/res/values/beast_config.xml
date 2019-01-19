@@ -120,4 +120,7 @@
 	
   <!-- Component name for the activity that will be presenting the Oreo's Recents UI -->
   <string name="config_recentsComponentNameOreo" translatable="false">com.android.systemui/.recents.RecentsActivity</string>
+  
+    <!-- Whether the device has outdated qti-telephony-common.jar -->
+    <bool name="config_oldQtiTelephony">false</bool>
 </resources>
