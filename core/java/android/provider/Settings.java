@@ -4687,12 +4687,6 @@ public final class Settings {
         public static final String  RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
         /**
-         * show recents in grid style or android go style
-         * @hide
-         */
-        public static final String RECENTS_LAYOUT_STYLE = "recents_layout_style";
-
-        /**
          * Volume rocker wake
          * @hide
          */
