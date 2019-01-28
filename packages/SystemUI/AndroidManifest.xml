@@ -234,6 +234,10 @@
 
     <!-- Weather on lockscreen -->
     <uses-permission android:name="org.pixelexperience.weather.client.READ_WEATHER" />
+	
+    <!-- Reboot -->
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.RECOVERY" />
 
     <application
         android:name=".SystemUIApplication"
