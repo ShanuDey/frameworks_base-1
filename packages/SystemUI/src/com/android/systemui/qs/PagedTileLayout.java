@@ -5,12 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.os.UserHandle;
-import android.provider.Settings;
 import android.graphics.Rect;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -379,7 +376,7 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
             };
 
     public static class TilePage extends TileLayout {
-        private int mMaxRows = 5;
+        private int mMaxRows = 3;
         public TilePage(Context context, AttributeSet attrs) {
             super(context, attrs);
             updateResources();
@@ -397,17 +394,7 @@ public class PagedTileLayout extends ViewPager implements QSTileLayout {
         }
 
         private int getRows() {
-            final Resources res = getContext().getResources();
-            final ContentResolver resolver = mContext.getContentResolver();
-
-            if (res.getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                return Settings.System.getIntForUser(resolver,
-                        Settings.System.QS_ROWS_PORTRAIT, 2,
-                        UserHandle.USER_CURRENT);
-            }
-            return Settings.System.getIntForUser(resolver,
-                        Settings.System.QS_ROWS_LANDSCAPE, 2,
-                        UserHandle.USER_CURRENT);
+            return Math.max(1, getResources().getInteger(R.integer.quick_settings_num_rows));
         }
 
         public void setMaxRows(int maxRows) {
