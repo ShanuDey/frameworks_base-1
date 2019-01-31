@@ -5195,7 +5195,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 updateSystemUiVisibilityLw();
             }
 			
-            if (!mHasNavigationBar && mUseGestureButton && mGestureButton != null) {
+            if (mUseGestureButton && mGestureButton != null) {
                 mGestureButton.navigationBarPosition(displayWidth, displayHeight, displayRotation);
             }
         }
