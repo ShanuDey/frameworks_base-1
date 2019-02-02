@@ -352,15 +352,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         "com.android.systemui.qstile.oreosquircletrim", // 14
     };
 
-    // QS header themes
-    private static final String[] QS_HEADER_THEMES = {
-        "com.android.systemui.qsheader.black", // 0
-        "com.android.systemui.qsheader.grey", // 1
-        "com.android.systemui.qsheader.lightgrey", // 2
-        "com.android.systemui.qsheader.accent", // 3
-        "com.android.systemui.qsheader.transparent", // 4
-    };
-
     /** If true, the system is in the half-boot-to-decryption-screen state.
      * Prudently disable QS and notifications.  */
     private static final boolean ONLY_CORE_APPS;
@@ -4240,18 +4231,6 @@ public class StatusBar extends SystemUI implements DemoMode,
     public void stockTileStyle() {
         stockNewTileStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
     }
-
-    // Switches qs header style from stock to custom
-    public void updateQSHeaderStyle() {
-        int qsHeaderStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.QS_HEADER_STYLE, 0, mLockscreenUserManager.getCurrentUserId());
-        updateNewQSHeaderStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), qsHeaderStyle);
-    }
-
-    // Unload all qs header styles back to stock
-    public void stockQSHeaderStyle() {
-        stockNewQSHeaderStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
-    }
 	
     // Switches theme accent from to another or back to stock
     public void updateAccents() {
@@ -5140,9 +5119,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.System.HEADS_UP_STOPLIST_VALUES), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.HEADS_UP_BLACKLIST_VALUES), false, this);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.QS_HEADER_STYLE),
-                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.Secure.getUriFor(
                      Settings.Secure.PULSE_APPS_BLACKLIST),
                     false, this, UserHandle.USER_ALL);
@@ -5154,10 +5130,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                 Settings.System.QS_TILE_STYLE))) {
                 stockTileStyle();
                 updateTileStyle();
-            } else if (uri.equals(Settings.System.getUriFor(
-                    Settings.System.QS_HEADER_STYLE))) {
-                stockQSHeaderStyle();
-                updateQSHeaderStyle();
             } else if (uri.equals(Settings.System.getUriFor(
                         Settings.System.ACCENT_PICKER))) {
                     // Unload the accents and update the accent only when the user asks.
@@ -5226,34 +5198,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             String qstiletheme = QS_TILE_THEMES[i];
             try {
                 om.setEnabled(qstiletheme,
-                        false /*disable*/, userId);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    // Switches qs header style to user selected.
-    public static void updateNewQSHeaderStyle(IOverlayManager om, int userId, int qsHeaderStyle) {
-        if (qsHeaderStyle == 0) {
-            stockNewQSHeaderStyle(om, userId);
-        } else {
-            try {
-                om.setEnabled(QS_HEADER_THEMES[qsHeaderStyle],
-                        true, userId);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Can't change qs header theme", e);
-            }
-        }
-    }
-
-    // Switches qs header style back to stock.
-    public static void stockNewQSHeaderStyle(IOverlayManager om, int userId) {
-        // skip index 0
-        for (int i = 1; i < QS_HEADER_THEMES.length; i++) {
-            String qsheadertheme = QS_HEADER_THEMES[i];
-            try {
-                om.setEnabled(qsheadertheme,
                         false /*disable*/, userId);
             } catch (RemoteException e) {
                 e.printStackTrace();
