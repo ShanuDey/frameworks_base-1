@@ -17,6 +17,90 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="statusbar_items_title">Редактирование иконок</string>
+	<string name="lockscreen_default">По умолчанию</string>
+    <string name="lockscreen_hidden">Нет</string>
+	
+    <!-- Shows when people have clicked on the custom lockscreen shortcut [CHAR LIMIT=60] -->
+    <string name="custom_hint">Проведите пальцем от иконки в сторону центра экрана</string>
+
+    <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Кофеин</string>
+    <string name="accessibility_quick_settings_caffeine_off">Кофеин выкл</string>
+    <string name="accessibility_quick_settings_caffeine_on">Кофеин вкл</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Звук</string>
+    <string name="quick_settings_sound_ring">Звонок</string>
+    <string name="quick_settings_sound_vibrate">Вибрация</string>
+    <string name="quick_settings_sound_dnd">Не беспокоить</string>
+
+    <!-- Screenrecord Notification Ticker -->
+    <string name="screenrecord_notif_ticker">Идёт запись экрана</string>
+    <!-- Screenrecord notification title -->
+    <string name="screenrecord_notif_title">Запись экрана</string>
+    <!-- Screenrecord notification action: Stop -->
+    <string name="screenrecord_notif_stop">Стоп</string>
+    <!-- Screenrecord notification action: show/hide pointer -->
+    <string name="screenrecord_notif_pointer_on">Нажатия</string>
+    <string name="screenrecord_notif_pointer_off">Нажатия</string>
+    <!-- Screen record notification error title -->
+    <string name="screenrecord_notif_error">Невозможно записать экран</string>
+    <string name="notification_channel_screenrecord">Запись экрана</string>
+
+    <!-- Advanced reboot -->
+    <string name="global_action_restart_advanced">Расшир. перезагрузка</string>
+    <string name="global_action_restart_recovery">Рекавери</string>
+    <string name="global_action_restart_bootloader">Загрузчик</string>
+    <string name="global_action_restart_ui">SystemUI</string>
+    <string name="global_action_restart_soft">Мягк. перезагрузка</string>
+
+    <!-- Screenshot Delete Toast -->
+    <string name="delete_screenshot_toast">Снимок экрана удален</string>
+
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Всплывающее уведомление отложено на 1 минуту.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Всплывающее уведомление отложено на <xliff:g id="number">%d</xliff:g> минут.</string>
+
+    <!-- Screenrecord Tile -->
+    <string name="quick_settings_screenrecord">Запись экрана</string>
+	
+    <string name="recents_free_ram">Своб. ОЗУ: %1$d МБ</string>
+	
+    <!-- HW Keys Tile -->
+    <string name="accessibility_quick_settings_hwkeys_on">Аппаратные кнопки</string>
+    <string name="accessibility_quick_settings_hwkeys_off">Аппаратные кнопки</string>
+    <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
+	
+    <!-- Gaming Mode -->
+    <string name="gaming_mode_tile_title">Игровой режим</string>
+    <string name="gaming_mode_tile_toast">Игровой режим включен</string>
+    <string name="gaming_mode_tile_toast_disabled">Игровой режим выключен</string>
+    <string name="gaming_mode_dialog_title">Игровой режим</string>
+    <string name="gaming_mode_dialog_message">Когда игровой режим включен, ваш режим звонка переключится в режим вибрации, все уведомления и аппаратные клавиши будут отключены. Громкость медиа будет увеличена до максимального уровня. Все отключенные настройки будут восстановлены после выхода из режима игры.</string>
+    <string name="accessibility_quick_settings_gaming_mode_on">Игровой режим</string>
+    <string name="accessibility_quick_settings_gaming_mode_off">Игровой режим</string>
+	
+    <!-- Advance location quick setting tile -->
+    <string name="quick_settings_secondary_location_off"></string>
+    <string name="quick_settings_location_secondary_battery_saving">Экономия заряда</string>
+    <string name="accessibility_quick_settings_location_battery_saving">По координатам сети</string>
+    <string name="quick_settings_location_secondary_gps_only">Только по спутникам GPS</string>
+    <string name="accessibility_quick_settings_location_gps_only">По спутникам GPS</string>
+    <string name="quick_settings_location_secondary_high_accuracy">Высокая точность</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Режим высокой точности</string>
+	
+    <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop_label">Расширенный экран</string>
+    <string name="quick_settings_expanded_desktop">Расширенный</string>
+    <string name="quick_settings_expanded_desktop_off">Нормальный</string>
+    <string name="quick_settings_expanded_navigation_off">Скрыть навбар</string>
+    <string name="quick_settings_expanded_statusbar_off">Скрыть статусбар</string>
+	
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Перезагрузка</string>
+    <string name="quick_settings_reboot_recovery_label">В рекавери</string>
+
     <!-- QS Config -->
     <string name="qs_menu_item_columns">Столбцы</string>
     <string name="qs_menu_item_columns_landscape">Столбцы в ландш.</string>
