@@ -559,12 +559,12 @@ public class AppTransition implements Dump {
         Context context = mContext;
         if (animAttr >= 0) {
             if (mIsResId) {
-                anim = animAttr;
+                resId = animAttr;
             } else {
                 AttributeCache.Entry ent = getCachedAnimations(lp);
                 if (ent != null) {
                     context = ent.context;
-                    anim = ent.array.getResourceId(animAttr, 0);
+                    resId = ent.array.getResourceId(animAttr, 0);
                 }
             }
         }
