@@ -4356,22 +4356,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mStatusBarKeyguardViewManager.isOccluded());
         Trace.endSection();
     }
-	
-    private void updateTickerAnimation() {
-        mTickerAnimationMode = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, 0, UserHandle.USER_CURRENT);
-        if (mTicker != null) {
-            mTicker.updateAnimation(mTickerAnimationMode);
-        }
-    }
-
-     private void updateTickerTickDuration() {
-        mTickerTickDuration = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.STATUS_BAR_TICKER_TICK_DURATION, 3000, UserHandle.USER_CURRENT);
-        if (mTicker != null) {
-            mTicker.updateTickDuration(mTickerTickDuration);
-        }
-    }
 
     /**
      * Switches qs tile style.
@@ -5461,6 +5445,22 @@ public class StatusBar extends SystemUI implements DemoMode,
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
+        }
+    }
+	
+    private void updateTickerAnimation() {
+        mTickerAnimationMode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, 0, UserHandle.USER_CURRENT);
+        if (mTicker != null) {
+            mTicker.updateAnimation(mTickerAnimationMode);
+        }
+    }
+
+    private void updateTickerTickDuration() {
+        mTickerTickDuration = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_TICKER_TICK_DURATION, 3000, UserHandle.USER_CURRENT);
+        if (mTicker != null) {
+            mTicker.updateTickDuration(mTickerTickDuration);
         }
     }
 
