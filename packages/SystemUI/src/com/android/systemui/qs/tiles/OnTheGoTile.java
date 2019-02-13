@@ -64,6 +64,11 @@ public class OnTheGoTile extends QSTileImpl<BooleanState> {
     public CharSequence getTileLabel() {
         return mContext.getString(R.string.quick_settings_onthego_label);
     }
+	
+    @Override
+    public void handleLongClick() {
+       // do nothing
+    }
 
     @Override
     public Intent getLongClickIntent() {
