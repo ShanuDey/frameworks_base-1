@@ -191,5 +191,8 @@
   <java-symbol type="anim" name="ethans_wallpaper_intra_close_exit" />
   <java-symbol type="anim" name="ethans_launch_task_behind_source" />
   <java-symbol type="anim" name="ethans_launch_task_behind_target" />
+  
+    <!-- On-The-Go -->
+    <java-symbol type="drawable" name="ic_lock_onthego" />
 
 </resources>
