@@ -124,9 +124,6 @@ public class AwesomeAnimationHelper {
                 anim[0] = com.android.internal.R.anim.shrink_fade_out_ribbon;
                 anim[1] = com.android.internal.R.anim.grow_fade_in_ribbon;
                 break;
-            case ANIMATION_RANDOM:
-                value = res.getString(com.android.internal.R.string.animation_random);
-                break;
             case ANIMATION_GROW_SHRINK_CENTER:
                 anim[0] = com.android.internal.R.anim.shrink_fade_out_center_ribbon;
                 anim[1] = com.android.internal.R.anim.grow_fade_in_center_ribbon;
@@ -251,6 +248,9 @@ public class AwesomeAnimationHelper {
                 break;
             case ANIMATION_ETHANS:
                 value = res.getString(com.android.internal.R.string.animation_ethans);
+                break;
+            case ANIMATION_RANDOM:
+                value = res.getString(com.android.internal.R.string.animation_random);
                 break;
             default:
                 value = res.getString(com.android.internal.R.string.action_null);
