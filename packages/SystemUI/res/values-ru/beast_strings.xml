@@ -108,5 +108,8 @@
     <string name="qs_menu_item_titles">Отображать подписи</string>
     <string name="qs_menu_item_rows">Ряды</string>
     <string name="qs_menu_item_rows_landscape">Ряды в ландш.</string>
+	
+    <!-- Button that controls inversion of layout of navigation bar -->
+    <string name="nav_bar_layout_inverse">Инвертировать порядок кнопок</string>
 
 </resources>
