@@ -42,7 +42,6 @@ import com.android.internal.R;
 public class WeatherClient {
 
     public static final String SERVICE_PACKAGE = "org.pixelexperience.weather.client";
-    private static final String SERVICE_PACKAGE_PERMISSION = SERVICE_PACKAGE + ".READ_WEATHER";
     public static final Uri WEATHER_URI = Uri.parse("content://org.pixelexperience.weather.client.provider/weather");
     public static final int WEATHER_UPDATE_SUCCESS = 0; // Success
     public static final int WEATHER_UPDATE_RUNNING = 1; // Update running
@@ -89,7 +88,8 @@ public class WeatherClient {
                 updateWeatherAndNotify(false);
             } else if (updateIntentAction.equals(intent.getAction())) {
                 updateWeatherAndNotify(false);
-            } else if (Intent.ACTION_TIME_CHANGED.equals(intent.getAction()) || Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction())) {
+            } else if (Intent.ACTION_TIME_CHANGED.equals(intent.getAction())
+                    || Intent.ACTION_TIMEZONE_CHANGED.equals(intent.getAction())) {
                 updateWeatherAndNotify(true);
             }
         }
@@ -97,7 +97,6 @@ public class WeatherClient {
 
     public WeatherClient(Context context) {
         mContext = context;
-        mContext.enforceCallingOrSelfPermission(SERVICE_PACKAGE_PERMISSION, "Missing or invalid weather permission: " + SERVICE_PACKAGE_PERMISSION);
         updateIntentAction = "updateIntentAction_" + Integer.toString(getRandomInt());
         pendingWeatherUpdate = PendingIntent.getBroadcast(mContext, getRandomInt(), new Intent(updateIntentAction), 0);
         mObserver = new ArrayList<>();
@@ -110,6 +109,18 @@ public class WeatherClient {
         filter.addAction(updateIntentAction);
         filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
         mContext.registerReceiver(weatherReceiver, filter);
+    }
+
+    public static boolean isAvailable(Context context) {
+        final PackageManager pm = context.getPackageManager();
+        try {
+            pm.getPackageInfo(SERVICE_PACKAGE, PackageManager.GET_ACTIVITIES);
+            int enabled = pm.getApplicationEnabledSetting(SERVICE_PACKAGE);
+            return enabled != PackageManager.COMPONENT_ENABLED_STATE_DISABLED &&
+                    enabled != PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 
     private int getRandomInt() {
