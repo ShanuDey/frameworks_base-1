@@ -156,5 +156,7 @@
         <item>default</item>
         <item>space;left,back,home,recent,right;space</item>
     </string-array>
+	
+    <string name="suspend_title_tile">Suspend Action</string>
 
 </resources>

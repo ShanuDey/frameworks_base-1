@@ -111,5 +111,7 @@
 	
     <!-- Button that controls inversion of layout of navigation bar -->
     <string name="nav_bar_layout_inverse">Инвертировать порядок кнопок</string>
+	
+    <string name="suspend_title_tile">Приостановка действий</string>
 
 </resources>
