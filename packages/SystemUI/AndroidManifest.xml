@@ -244,6 +244,8 @@
     <!-- Visualizer -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+	
+    <protected-broadcast android:name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE" />
 
     <application
         android:name=".SystemUIApplication"
@@ -316,6 +318,13 @@
                 <action android:name="com.android.systemui.action.REFRESH_SOUND" />
             </intent-filter>
         </receiver>
+	
+        <service android:name=".beast.screenstate.ScreenStateService"
+                android:exported="true" >
+            <intent-filter>
+               <action android:name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE"/>
+            </intent-filter>
+        </service>
 
         <!-- started from PhoneWindowManager
              TODO: Should have an android:permission attribute -->
