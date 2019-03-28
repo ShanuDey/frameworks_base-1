@@ -195,5 +195,8 @@
   
     <!-- On-The-Go -->
     <java-symbol type="drawable" name="ic_lock_onthego" />
+	
+  <!-- Smart charging battery percentage -->
+  <java-symbol type="integer" name="config_smartChargingBatteryLevel" />
 
 </resources>
