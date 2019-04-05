@@ -151,9 +151,10 @@ oneway interface IStatusBar
     void onFingerprintError(String error);
     // Used to hide the fingerprint dialog when the authenticationclient is stopped
     void hideFingerprintDialog();
+    void handleInDisplayFingerprintView(boolean show, boolean isEnrolling);
 
     /**
-     *  Lean
+     *  Beast
      */
     void toggleCameraFlash();
     // Start SmartNav API
