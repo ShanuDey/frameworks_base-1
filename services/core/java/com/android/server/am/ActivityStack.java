@@ -3838,6 +3838,9 @@ class ActivityStack<T extends StackWindowController> extends ConfigurationContai
             if (oomAdj) {
                 mService.updateOomAdjLocked();
             }
+
+            r.releasePerfLockHandlerIfNeeded();
+
             return r;
         }
 
