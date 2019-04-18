@@ -135,11 +135,7 @@ public class CustomTextClock extends TextView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (handType == 2) {
-            if (langHasChanged || FixAlign) {
-                setText(topText);
-                langHasChanged = false;
-                FixAlign = false;
-            }
+            //setText(topText);
             setTextColor(ColorText.getWallColor(mContext));
         }
     }
