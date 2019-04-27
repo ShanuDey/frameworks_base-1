@@ -68,16 +68,6 @@ public class LangGuard {
                         return numString;
                     }
                 }
-                return numString;
-
-            case "ru":
-                if (num < 20) {
-                   if (!hours && num < 10 ) {
-                       numString = "Ноль" + UnitsString[num];
-                   } else
-                    numString = UnitsString[num];
-                    return numString;
-                }
                 numString = TensString[tens] + " "+ UnitsString[units];
                 return numString;
 
@@ -94,9 +84,14 @@ public class LangGuard {
                 return numString;
 
             case "ja":
+                if (num < 20) {
+                    numString = UnitsString[num];
+                    return numString;
+                }
                 numString = TensString[tens] + UnitsString[units];
                 return numString;
 
+            // Completely broken
             case "nl":
                 if (units == 1 || units == 6) {
                     numString = UnitsString[units].substring(0,4) + "en" + TensString[tens];
@@ -105,8 +100,21 @@ public class LangGuard {
                 } else if (units == 2 || units == 3 || units == 4 || units == 5 || units == 8) {
                     numString = UnitsString[units].substring(0,5) + "en" + TensString[tens];
                 } else {
-                    numString = UnitsString[units] + "en" + TensString[tens];
+                    numString = UnitsString[units] + "en" + TensString[tens].toLowerCase();
                 }
+                if (hours && num < 10) {
+                    numString = numString.substring(0, (numString.length() - 2));
+                } else if(num < 20) {
+                    numString = UnitsString[num];
+                }
+                return numString;
+
+            case "tr":
+                if (num < 20) {
+                    numString = UnitsString[num];
+                    return numString;
+                }
+                numString = TensString[tens] + UnitsString[units];
                 return numString;
         }
         return numString;
