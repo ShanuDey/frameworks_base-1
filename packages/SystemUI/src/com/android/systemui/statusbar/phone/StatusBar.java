@@ -74,6 +74,8 @@ import android.content.pm.UserInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.PorterDuff;
@@ -636,6 +638,12 @@ public class StatusBar extends SystemUI implements DemoMode,
     private VisualizerView mVisualizerView;
     private boolean mScreenOn;
     private boolean mKeyguardShowingMedia;
+
+    private boolean mWallpaperSupportsAmbientMode;
+    // LS visualizer on Ambient Display
+    private boolean mAmbientVisualizer;
+
+    private boolean mChargingAnimation;
 
     private BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
         @Override
@@ -1902,10 +1910,14 @@ public class StatusBar extends SystemUI implements DemoMode,
             mScrimController.setHasBackdrop(hasArtwork);
         }
 
-        if (keyguardVisible && mKeyguardShowingMedia &&
-                (artworkDrawable instanceof BitmapDrawable)) {
-            // always use current backdrop to color eq
-            mVisualizerView.setBitmap(((BitmapDrawable)artworkDrawable).getBitmap());
+        if (mVisualizerView != null) {
+            if (mKeyguardShowingMedia && artworkDrawable instanceof BitmapDrawable) {
+                // always use current backdrop to color eq
+                mVisualizerView.setBitmap(((BitmapDrawable)artworkDrawable).getBitmap());
+            } else {
+                // clear the color
+                mVisualizerView.setBitmap(null);
+            }
         }
 
         if ((hasArtwork || DEBUG_MEDIA_FAKE_ARTWORK)
