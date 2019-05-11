@@ -113,5 +113,8 @@
     <string name="nav_bar_layout_inverse">Инвертировать порядок кнопок</string>
 	
     <string name="suspend_title_tile">Приостановка действий</string>
+	
+    <!--Google sound search tile -->
+    <string name="quick_settings_sound_search">Голосовой поиск</string>
 
 </resources>
