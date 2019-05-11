@@ -41,7 +41,7 @@ public class LangGuard {
                                 UnitsString[units].toLowerCase();
                     return numString;
                 } else if (units == 3) {
-                    numString = TensString[tens] + "tr�";
+                    numString = TensString[tens] + "tré";
                     return numString; 
                 } else {
                     numString = TensString[tens] + UnitsString[units].toLowerCase();
@@ -73,7 +73,7 @@ public class LangGuard {
             case "ru":
                 if (num < 20) {
                    if (!hours && num < 10 ) {
-                       numString = "Ноль " + UnitsString[num];
+                       numString = "Ноль" + UnitsString[num];
                    } else
                     numString = UnitsString[num];
                     return numString;
