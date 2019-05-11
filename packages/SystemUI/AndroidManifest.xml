@@ -244,7 +244,9 @@
     <!-- Visualizer -->
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-	
+
+    <!-- QS Tiles -->
+    <uses-permission android:name="lineageos.permission.HARDWARE_ABSTRACTION_ACCESS" />	
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 	
     <protected-broadcast android:name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE" />
