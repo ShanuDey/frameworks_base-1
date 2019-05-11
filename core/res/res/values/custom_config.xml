@@ -16,28 +16,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- The list of components which should be automatically disabled. -->
-    <string-array name="config_disabledComponents" translatable="false">
-    </string-array>
-
-    <!-- The list of components which should be forced to be enabled. -->
-    <string-array name="config_forceEnabledComponents" translatable="false">
-    </string-array>
-
-    <!-- Whether notify fingerprint client of successful cancelled authentication -->
-    <bool name="config_notifyClientOnFingerprintCancelSuccess">false</bool>
-
-    <!-- Show a custom view for FOD -->
-    <bool name="config_needCustomFODView">false</bool>
-
-    <bool name="config_usesOnePlusFOD">false</bool>
-
     <!-- Default values for LiveDisplay -->
     <integer name="config_dayColorTemperature">6500</integer>
     <integer name="config_nightColorTemperature">4800</integer>
     <integer name="config_outdoorAmbientLux">12000</integer>
     <integer name="config_outdoorAmbientLuxHysteresis">1500</integer>
-    <integer name="config_defaultLiveDisplayMode">0</integer>
+    <integer name="config_defaultLiveDisplayMode">2</integer>
 
     <!-- These values should map to the true min and max
          that the backend is capable of adjusting to. This
