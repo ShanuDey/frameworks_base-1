@@ -133,4 +133,7 @@
 
     <!-- Smart charging battery percentage -->
     <integer name="config_smartChargingBatteryLevel">80</integer>
+	
+    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+    <bool name="config_cleanupUnusedFingerprints">true</bool>
 </resources>
