@@ -213,7 +213,6 @@ public class HotspotControllerImpl implements HotspotController, WifiManager.Sof
     @Override
     public void onStaConnected(String Macaddr, int numConnectedDevices) {
         mNumConnectedDevices = numConnectedDevices;
-        fireHotspotChangedCallback(isHotspotEnabled(), numConnectedDevices);
     }
 
     @Override

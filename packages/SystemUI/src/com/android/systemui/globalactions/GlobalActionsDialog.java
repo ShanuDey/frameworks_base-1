@@ -31,6 +31,7 @@ import android.app.WallpaperManager;
 import android.app.admin.DevicePolicyManager;
 import android.app.trust.TrustManager;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -563,6 +564,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                         && !mEmergencyAffordanceManager.needsEmergencyAffordance() && mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showEmergencyButtonInPowerMenu)) {
                     mItems.add(new EmergencyDialerAction());
+                }
             } else if (GLOBAL_ACTION_KEY_ONTHEGO.equals(actionKey)) {
                 if (Settings.System.getInt(mContext.getContentResolver(),
                         Settings.System.GLOBAL_ACTIONS_ONTHEGO, 0) == 1) {
