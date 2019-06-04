@@ -2366,10 +2366,6 @@ final class ActivityRecord extends ConfigurationContainer implements AppWindowCo
                 com.android.internal.R.bool.config_haveHigherAspectRatioScreen);
         final float maxAspectRatio = higherAspectRatio ? mFullScreenAspectRatio : info.maxAspectRatio;
 
-        if (service.mWindowManager.isGestureButtonEnabled()) {
-            return;
-        }
-
         final ActivityStack stack = getStack();
         if (task == null || stack == null || task.inMultiWindowMode() || maxAspectRatio == 0
                 || isInVrUiMode(getConfiguration())) {

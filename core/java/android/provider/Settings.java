@@ -4673,16 +4673,6 @@ public final class Settings {
          * @hide
          */
         public static final String TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
-		
-        /**
-         * @hide
-         */
-        public static final String USE_BOTTOM_GESTURE_NAVIGATION =
-                "use_bottom_gesture_navigation";
-
-        /** @hide */
-        private static final Validator USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR =
-                BOOLEAN_VALIDATOR;
 				
         /**
          * show clear all recents button
@@ -4831,8 +4821,7 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_STYLE,
             STATUSBAR_CLOCK_DATE_FORMAT,
             ACCELEROMETER_ROTATION_ANGLES,
-            NOTIFICATION_LIGHT_PULSE,
-            USE_BOTTOM_GESTURE_NAVIGATION
+            NOTIFICATION_LIGHT_PULSE
         };
 
         /**
@@ -4966,7 +4955,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(ACCELEROMETER_ROTATION_ANGLES);
             PRIVATE_SETTINGS.add(WEATHER_LOCKSCREEN_UNIT);
             PRIVATE_SETTINGS.add(QS_HEADER_STYLE);
-            PRIVATE_SETTINGS.add(USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(SYSTEM_THEME_STYLE);
         }
 
@@ -5077,7 +5065,6 @@ public final class Settings {
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES, ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
             VALIDATORS.put(WEATHER_LOCKSCREEN_UNIT, WEATHER_LOCKSCREEN_UNIT_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
-            VALIDATORS.put(USE_BOTTOM_GESTURE_NAVIGATION, USE_BOTTOM_GESTURE_NAVIGATION_VALIDATOR);
         }
 
         /**
