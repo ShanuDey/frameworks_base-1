@@ -763,8 +763,10 @@ final class Notifier {
     }
 
     private void showWiredChargingStarted(int batteryLevel) {
+        final boolean animationEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.CHARGING_ANIMATION, 1) == 1;
         playChargingStartedSound();
-        if (mStatusBarManagerInternal != null) {
+        if (mStatusBarManagerInternal != null && animationEnabled) {
             mStatusBarManagerInternal.showChargingAnimation(batteryLevel);
         }
         mSuspendBlocker.release();
