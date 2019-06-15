@@ -86,8 +86,6 @@ public class BatteryMeterView extends LinearLayout implements
     private final Context mContext;
     private final int mFrameColor;
 
-    private int mStyle = BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT;
-
     /**
      * Whether we should use colors that adapt based on wallpaper/the scrim behind quick settings.
      */
@@ -237,11 +235,6 @@ public class BatteryMeterView extends LinearLayout implements
 
     @Override
     public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) {
-
-        if (isCircleBattery()) {
-            setForceShowPercent(pluggedIn);
-        }
-
         mDrawable.setBatteryLevel(level);
         mDrawable.setCharging(pluggedIn);
         mLevel = level;
@@ -249,11 +242,6 @@ public class BatteryMeterView extends LinearLayout implements
         setContentDescription(
                 getContext().getString(charging ? R.string.accessibility_battery_level_charging
                         : R.string.accessibility_battery_level, level));
-    }
-
-    private boolean isCircleBattery() {
-        return mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_CIRCLE
-                || mStyle == BatteryMeterDrawableBase.BATTERY_STYLE_DOTTED_CIRCLE;
     }
 
     @Override
@@ -391,10 +379,8 @@ public class BatteryMeterView extends LinearLayout implements
     }
 
     private void updateBatteryStyle(String styleStr) {
-
         final int style = styleStr == null ?
                 BatteryMeterDrawableBase.BATTERY_STYLE_PORTRAIT : Integer.parseInt(styleStr);
-        mStyle = style;
 
         switch (style) {
             case BatteryMeterDrawableBase.BATTERY_STYLE_TEXT:
