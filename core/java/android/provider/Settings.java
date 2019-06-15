@@ -5231,6 +5231,11 @@ public final class Settings {
          * @hide
          */
         public static final String CHARGING_ANIMATION = "charging_animation";
+		
+        /**
+         * @hide
+         */
+        public static final String QS_HEADER_STYLE = "qs_header_style";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5469,6 +5474,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LIVE_DISPLAY_HINTED);
             PRIVATE_SETTINGS.add(DISPLAY_CUTOUT_HIDDEN);
             PRIVATE_SETTINGS.add(FORCE_FULLSCREEN_CUTOUT_APPS);
+            PRIVATE_SETTINGS.add(QS_HEADER_STYLE);
         }
 
 

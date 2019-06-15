@@ -54,6 +54,15 @@ public class ThemeAccentUtils {
         "com.android.settings.theme.dark", // 1
         "com.android.systemui.theme.dark", // 2
     };
+	
+    // QS header themes
+    private static final String[] QS_HEADER_THEMES = {
+        "com.android.systemui.qsheader.black", // 0
+        "com.android.systemui.qsheader.grey", // 1
+        "com.android.systemui.qsheader.lightgrey", // 2
+        "com.android.systemui.qsheader.accent", // 3
+        "com.android.systemui.qsheader.transparent", // 4
+    };
 
     private static final String STOCK_DARK_THEME = "com.android.systemui.theme.dark";
 
@@ -71,7 +80,7 @@ public class ThemeAccentUtils {
         } else if (accentSetting == 20) {
             try {
                 // If using a dark, black theme we use the white accent, otherwise use the black accent
-                if (isUsingDarkTheme(om, userId) {
+                if (isUsingDarkTheme(om, userId)) {
                     om.setEnabled(ACCENTS[21],
                             true, userId);
                 } else {
@@ -126,7 +135,7 @@ public class ThemeAccentUtils {
     public static void unfuckBlackWhiteAccent(IOverlayManager om, int userId) {
         OverlayInfo themeInfo = null;
         try {
-            if (isUsingDarkTheme(om, userId){
+            if (isUsingDarkTheme(om, userId)){
                 themeInfo = om.getOverlayInfo(ACCENTS[20],
                         userId);
                 if (themeInfo != null && themeInfo.isEnabled()) {
@@ -147,6 +156,34 @@ public class ThemeAccentUtils {
             }
         } catch (RemoteException e) {
             e.printStackTrace();
+        }
+    }
+	
+    // Switches qs header style to user selected.
+    public static void updateQSHeaderStyle(IOverlayManager om, int userId, int qsHeaderStyle) {
+        if (qsHeaderStyle == 0) {
+            stockQSHeaderStyle(om, userId);
+        } else {
+            try {
+                om.setEnabled(QS_HEADER_THEMES[qsHeaderStyle],
+                        true, userId);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change qs header theme", e);
+            }
+        }
+    }
+
+    // Switches qs header style back to stock.
+    public static void stockQSHeaderStyle(IOverlayManager om, int userId) {
+        // skip index 0
+        for (int i = 1; i < QS_HEADER_THEMES.length; i++) {
+            String qsheadertheme = QS_HEADER_THEMES[i];
+            try {
+                om.setEnabled(qsheadertheme,
+                        false /*disable*/, userId);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
