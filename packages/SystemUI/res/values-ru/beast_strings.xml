@@ -81,15 +81,6 @@
     <string name="accessibility_quick_settings_gaming_mode_on">Игровой режим</string>
     <string name="accessibility_quick_settings_gaming_mode_off">Игровой режим</string>
 	
-    <!-- Advance location quick setting tile -->
-    <string name="quick_settings_secondary_location_off"></string>
-    <string name="quick_settings_location_secondary_battery_saving">Экономия заряда</string>
-    <string name="accessibility_quick_settings_location_battery_saving">По координатам сети</string>
-    <string name="quick_settings_location_secondary_gps_only">Только по спутникам GPS</string>
-    <string name="accessibility_quick_settings_location_gps_only">По спутникам GPS</string>
-    <string name="quick_settings_location_secondary_high_accuracy">Высокая точность</string>
-    <string name="accessibility_quick_settings_location_high_accuracy">Режим высокой точности</string>
-	
     <!-- Expanded Desktop QS Tile -->
     <string name="quick_settings_expanded_desktop_label">Расширенный экран</string>
     <string name="quick_settings_expanded_desktop">Расширенный</string>
