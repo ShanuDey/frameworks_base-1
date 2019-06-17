@@ -1092,14 +1092,6 @@ public final class PowerManagerService extends SystemService
                 Settings.System.SCREEN_BRIGHTNESS_MODE,
                 Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL, UserHandle.USER_CURRENT);
 				
-        mButtonTimeout = Settings.System.getIntForUser(resolver,
-                Settings.System.BUTTON_BACKLIGHT_TIMEOUT,
-                DEFAULT_BUTTON_ON_DURATION, UserHandle.USER_CURRENT);
-
-        mButtonBrightness = Settings.System.getIntForUser(resolver,
-                Settings.System.BUTTON_BRIGHTNESS, mButtonBrightnessSettingDefault,
-                UserHandle.USER_CURRENT);
-
         mProximityWakeEnabled = Settings.System.getInt(resolver,
                 Settings.System.PROXIMITY_ON_WAKE,
                 mProximityWakeEnabledByDefaultConfig ? 1 : 0) == 1;
