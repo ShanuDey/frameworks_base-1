@@ -149,6 +149,10 @@ public class CarQSFragment extends Fragment implements QS {
     public void setOverscrolling(boolean overscrolling) {
         // No overscrolling to reveal quick settings.
     }
+	
+    @Override
+    public void setSecureExpandDisabled(boolean value) {
+    }
 
     @Override
     public void setExpanded(boolean qsExpanded) {

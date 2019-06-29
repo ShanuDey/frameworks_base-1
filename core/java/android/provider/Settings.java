@@ -5018,13 +5018,20 @@ public final class Settings {
         public static final String SCREEN_STATE_ON_DELAY = "screen_state_on_delay";
 		
         /**
-<<<<<<< HEAD
-         * Whether to disable showing arrows in network traffic indicators
-=======
          * Whether to use icon pack for Recents
          * @hide
          */
         public static final String RECENTS_ICON_PACK = "recents_icon_pack";
+		
+        /**
+         * Disable expanding quick settings on secure lock screens
+         *
+         * @hide
+         */
+        public static final String LOCK_QS_DISABLED = "lockscreen_qs_disabled";
+
+        private static final Validator LOCK_QS_DISABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -5034,7 +5041,6 @@ public final class Settings {
          *       in this array. If you have one setting depending on another,
          *       make sure that they are ordered appropriately.
          *
->>>>>>> 9cc854ae80d... Stock Recents/Overview icon pack support [2/3]
          * @hide
          */
         public static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
@@ -5357,7 +5363,8 @@ public final class Settings {
             STATUS_BAR_SHOW_TICKER,
             STATUS_BAR_TICKER_ANIMATION_MODE,
             STATUS_BAR_TICKER_TICK_DURATION,
-            USE_OLD_MOBILETYPE
+            USE_OLD_MOBILETYPE,
+            LOCK_QS_DISABLED
         };
 
         /**
@@ -5519,6 +5526,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ENABLE);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_TIMEOUT);
             PRIVATE_SETTINGS.add(BUTTON_BACKLIGHT_ON_TOUCH_ONLY);
+            PRIVATE_SETTINGS.add(LOCK_QS_DISABLED);
         }
 
 
@@ -5662,6 +5670,7 @@ public final class Settings {
             VALIDATORS.put(LIVE_DISPLAY_HINTED, LIVE_DISPLAY_HINTED_VALIDATOR);
             VALIDATORS.put(DISPLAY_CUTOUT_HIDDEN, DISPLAY_CUTOUT_HIDDEN_VALIDATOR);
             VALIDATORS.put(FORCE_FULLSCREEN_CUTOUT_APPS, FORCE_FULLSCREEN_CUTOUT_APPS_VALIDATOR);
+            VALIDATORS.put(LOCK_QS_DISABLED, LOCK_QS_DISABLED_VALIDATOR);
         }
 
         /**
