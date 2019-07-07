@@ -138,16 +138,6 @@
     <!-- Button that controls inversion of layout of navigation bar -->
     <string name="nav_bar_layout_inverse">Invert layout</string>
 	
-    <string-array name="nav_bar_layouts_new">
-        <item>Normal</item>
-        <item>Compact</item>
-    </string-array>
-
-    <string-array name="nav_bar_layouts_values_new" translatable="false">
-        <item>default</item>
-        <item>space;left,back,home,recent,right;space</item>
-    </string-array>
-	
     <string name="suspend_title_tile">Suspend Action</string>
 	
     <!-- CustomText clock -->
