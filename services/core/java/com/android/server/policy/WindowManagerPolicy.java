@@ -59,6 +59,7 @@ import static android.view.WindowManager.LayoutParams.TYPE_VOICE_INTERACTION;
 import static android.view.WindowManager.LayoutParams.TYPE_VOICE_INTERACTION_STARTING;
 import static android.view.WindowManager.LayoutParams.TYPE_VOLUME_OVERLAY;
 import static android.view.WindowManager.LayoutParams.TYPE_WALLPAPER;
+import static android.view.WindowManager.LayoutParams.TYPE_FINGERPRINT_ON_DISPLAY;
 import static android.view.WindowManager.LayoutParams.isSystemAlertWindowType;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
@@ -909,6 +910,8 @@ public interface WindowManagerPolicy extends WindowManagerPolicyConstants {
             case TYPE_POINTER:
                 // the (mouse) pointer layer
                 return  33;
+            case TYPE_FINGERPRINT_ON_DISPLAY:
+                return  50;
             default:
                 Slog.e("WindowManager", "Unknown window type: " + type);
                 return APPLICATION_LAYER;
