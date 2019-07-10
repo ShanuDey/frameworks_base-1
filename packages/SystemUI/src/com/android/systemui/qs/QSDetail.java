@@ -24,8 +24,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.Animatable;
-import android.os.UserHandle;
-import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
@@ -93,13 +91,9 @@ public class QSDetail extends LinearLayout {
         }
 
         // Update top space height in orientation change
-        boolean headerImageEnabled = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.OMNI_STATUS_BAR_CUSTOM_HEADER, 0,
-                UserHandle.USER_CURRENT) == 1;
         mQsDetailTopSpace.getLayoutParams().height =
                 mContext.getResources().getDimensionPixelSize(
-                        com.android.internal.R.dimen.quick_qs_offset_height) + (headerImageEnabled ?
-                        mContext.getResources().getDimensionPixelSize(R.dimen.qs_header_image_offset) : 0);
+                        com.android.internal.R.dimen.quick_qs_offset_height);
         mQsDetailTopSpace.setLayoutParams(mQsDetailTopSpace.getLayoutParams());
     }
 
