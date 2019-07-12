@@ -43,6 +43,7 @@ import com.android.systemui.R;
 import com.android.systemui.SysUiServiceProvider;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.phone.StatusBarIconController.DarkIconManager;
+import com.android.systemui.statusbar.policy.Clock;
 import com.android.systemui.statusbar.phone.TickerView;
 import com.android.systemui.statusbar.policy.DarkIconDispatcher;
 import com.android.systemui.statusbar.policy.EncryptionHelper;
@@ -66,8 +67,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private KeyguardMonitor mKeyguardMonitor;
     private NetworkController mNetworkController;
     private LinearLayout mSystemIconArea;
-    private View mClockView;
-    private View mRightClock;
+    private Clock mClockView;
+    private Clock mRightClock;
     private int mClockStyle;
     private View mNotificationIconAreaInner;
     private int mDisabled1;
@@ -137,7 +138,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mDarkIconManager.setShouldLog(true);
         Dependency.get(StatusBarIconController.class).addIconGroup(mDarkIconManager);
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
-        mClockView = mStatusBar.findViewById(R.id.clock);
+        mClockView = (Clock) mStatusBar.findViewById(R.id.clock);
         mCenterClockLayout = (LinearLayout) mStatusBar.findViewById(R.id.center_clock_layout);
         mRightClock = mStatusBar.findViewById(R.id.right_clock);
         showSystemIconArea(false);
@@ -259,6 +260,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         if (mClockStyle == 2) {
             animateHide(mRightClock, animate, true);
         }
+        if (mClockStyle == 0) {
+            animateHide(mClockView, animate, true);
+        }
     }
 
     public void showSystemIconArea(boolean animate) {
@@ -266,6 +270,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         animateShow(mCenterClockLayout, animate);
         if (mClockStyle == 2) {
             animateShow(mRightClock, animate);
+        }
+        if (mClockStyle == 0) {
+            animateShow(mClockView, animate);
         }
     }
 
@@ -296,11 +303,12 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
      */
     private void animateHide(final View v, boolean animate, final boolean invisible) {
         v.animate().cancel();
-        if (!animate) {
-            v.setAlpha(0f);
-            v.setVisibility(invisible ? View.INVISIBLE : View.GONE);
-            return;
-        }
+        if (invisible) {
+            if (!animate) {
+                v.setAlpha(0f);
+                v.setVisibility(invisible ? View.INVISIBLE : View.GONE);
+                return;
+            }
 
         v.animate()
                 .alpha(0f)
@@ -308,6 +316,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 .setStartDelay(0)
                 .setInterpolator(Interpolators.ALPHA_OUT)
                 .withEndAction(() -> v.setVisibility(invisible ? View.INVISIBLE : View.GONE));
+        } else {
+            v.setVisibility(View.GONE);
+        }
     }
 
     /**
@@ -372,11 +383,18 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 
     private void updateClockStyle(boolean animate) {
-        if (mClockStyle == 1 || mClockStyle == 2) {
-            animateHide(mClockView, animate, false);
-        } else {
-            animateShow(mClockView, animate);
-        }
+        if (mClockStyle==0) {
+            if (mClockView.isClockVisible()) {
+                animateShow(mClockView, animate);
+            } else {
+                animateHide(mClockView, animate, false);
+            }
+        } else if (mClockStyle == 2) {
+            if (mRightClock.isClockVisible()) {
+                animateShow(mRightClock, animate);
+            } else {
+                animateHide(mRightClock, animate, false);
+            }
     }
 
     private void initTickerView() {
