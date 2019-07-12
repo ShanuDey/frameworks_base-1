@@ -395,7 +395,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
             } else {
                 animateHide(mRightClock, animate, false);
             }
-    }
+        }
+	}
 
     private void initTickerView() {
         if (mTickerEnabled != 0) {
