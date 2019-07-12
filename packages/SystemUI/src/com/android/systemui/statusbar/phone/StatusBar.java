@@ -370,6 +370,24 @@ public class StatusBar extends SystemUI implements DemoMode,
         "com.android.systemui.qstile.oreo", // 12
         "com.android.systemui.qstile.oreocircletrim", // 13
         "com.android.systemui.qstile.oreosquircletrim", // 14
+        "com.android.systemui.qstile.inkdrop", // 15
+	"com.android.systemui.qstile.ink", //16
+	"com.android.systemui.qstile.teardrop", // 17
+        "com.android.systemui.qstile.cookie", // 18
+        "com.android.systemui.qstile.circleoutline", //19
+	"com.android.systemui.qstile.hexagon", // 20
+        "com.android.systemui.qstile.star", // 21
+        "com.android.systemui.qstile.square", // 22
+	"com.android.systemui.qstile.gear", // 23
+	"com.android.systemui.qstile.badge", // 24
+        "com.android.systemui.qstile.badgetwo", // 25
+	"com.android.systemui.qstile.squircle", // 26
+	"com.android.systemui.qstile.diamond", // 27
+	"com.android.systemui.qstile.neonlike", // 28
+        "com.android.systemui.qstile.oos", // 29
+        "com.android.systemui.qstile.triangles", // 30
+        "com.android.systemui.qstile.divided", // 31
+        "com.android.systemui.qstile.cosmos", // 32
     };
 
     /** If true, the system is in the half-boot-to-decryption-screen state.
