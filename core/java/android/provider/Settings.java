@@ -4780,6 +4780,15 @@ public final class Settings {
         /**
          * @hide
          */
+        public static final String OMNI_BOTTOM_GESTURE_SWIPE_START =
+                "bottom_gesture_navigation_swipe_start";
+
+        private static final Validator OMNI_BOTTOM_GESTURE_SWIPE_START_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+				
+        /**
+         * @hide
+         */
         public static final String ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
 		
         /**
@@ -5366,6 +5375,7 @@ public final class Settings {
             OMNI_USE_BOTTOM_GESTURE_NAVIGATION,
             OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT,
             OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
+            OMNI_BOTTOM_GESTURE_SWIPE_START,
             STATUS_BAR_SHOW_TICKER,
             STATUS_BAR_TICKER_ANIMATION_MODE,
             STATUS_BAR_TICKER_TICK_DURATION,
@@ -5508,6 +5518,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_USE_BOTTOM_GESTURE_NAVIGATION);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT);
             PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT);
+            PRIVATE_SETTINGS.add(OMNI_BOTTOM_GESTURE_SWIPE_START);
             PRIVATE_SETTINGS.add(STATUS_BAR_SHOW_TICKER);
             PRIVATE_SETTINGS.add(STATUS_BAR_TICKER_ANIMATION_MODE);
             PRIVATE_SETTINGS.add(STATUS_BAR_TICKER_TICK_DURATION);
@@ -5655,6 +5666,8 @@ public final class Settings {
                     OMNI_BOTTOM_GESTURE_TRIGGER_TIMEOUT_VALIDATOR);
             VALIDATORS.put(OMNI_BOTTOM_GESTURE_SWIPE_LIMIT,
                     OMNI_BOTTOM_GESTURE_SWIPE_LIMIT_VALIDATOR);
+            VALIDATORS.put(OMNI_BOTTOM_GESTURE_SWIPE_START,
+                    OMNI_BOTTOM_GESTURE_SWIPE_START_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_SHOW_TICKER, STATUS_BAR_SHOW_TICKER_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_TICKER_ANIMATION_MODE,
                     STATUS_BAR_TICKER_ANIMATION_MODE_VALIDATOR);
