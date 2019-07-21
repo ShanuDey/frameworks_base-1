@@ -637,7 +637,6 @@ public class StatusBar extends SystemUI implements DemoMode,
     private VisualizerView mVisualizerView;
     private boolean mScreenOn;
     private boolean mKeyguardShowingMedia;
-    private boolean mWallpaperSupportsAmbientMode;
 
     private BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
         @Override
@@ -648,16 +647,13 @@ public class StatusBar extends SystemUI implements DemoMode,
                 return;
             }
             WallpaperInfo info = wallpaperManager.getWallpaperInfo();
-            mWallpaperSupportsAmbientMode = info != null && info.getSupportsAmbientMode();
+            final boolean supportsAmbientMode = info != null &&
+                    info.getSupportsAmbientMode();
 
-            mStatusBarWindowManager.setWallpaperSupportsAmbientMode(mWallpaperSupportsAmbientMode);
-            mScrimController.setWallpaperSupportsAmbientMode(mWallpaperSupportsAmbientMode);
+            mStatusBarWindowManager.setWallpaperSupportsAmbientMode(supportsAmbientMode);
+            mScrimController.setWallpaperSupportsAmbientMode(supportsAmbientMode);
         }
     };
-
-    public boolean wallpaperSupportsAmbientMode(){
-        return mWallpaperSupportsAmbientMode;
-    }
 
     private Runnable mLaunchTransitionEndRunnable;
     protected boolean mLaunchTransitionFadingAway;
