@@ -151,7 +151,6 @@ import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.NotificationVisibility;
 import com.android.internal.statusbar.StatusBarIcon;
 import com.android.internal.statusbar.ThemeAccentUtils;
-import com.android.internal.util.beast.BeastUtils;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.internal.util.hwkeys.PackageMonitor;
@@ -3768,7 +3767,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         updateNotificationViews();
         mMediaManager.clearCurrentMediaNotification();
         setLockscreenUser(newUserId);
-        mSSettingsObserver.update();
     }
 
     @Override
@@ -5275,8 +5273,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
- private boolean mShowNavBar;
-
     private SSettingsObserver mSSettingsObserver = new SSettingsObserver(mHandler);
     private class SSettingsObserver extends ContentObserver {
         SSettingsObserver(Handler handler) {
@@ -5292,9 +5288,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
-                    false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.NAVIGATION_BAR_SHOW),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_TILE_STYLE),
@@ -5389,7 +5382,6 @@ public class StatusBar extends SystemUI implements DemoMode,
 
          public void update() {
             setLockscreenDoubleTapToSleep();
-            updateNavigationBar();
             setBrightnessSlider();
             setHeadsUpStoplist();
             setHeadsUpBlacklist();
@@ -5484,32 +5476,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         // Make sure to pass -1 for repeat so VibratorService doesn't stop us when going to sleep.
         mVibrator.vibrate(mCameraLaunchGestureVibePattern, -1 /* repeat */);
     }
-
-    private void updateNavigationBar() {
-        int showNavBar = Settings.System.getIntForUser(
-                mContext.getContentResolver(), Settings.System.NAVIGATION_BAR_SHOW,
-                 -1, UserHandle.USER_CURRENT);
-        if (showNavBar != -1){
-            boolean showNavBarBool = showNavBar == 1;
-            if (showNavBarBool !=  mShowNavBar){
-                   mShowNavBar = BeastUtils.deviceSupportNavigationBar(mContext);
-                  if (DEBUG) Log.v(TAG, "updateNavigationBar=" + mShowNavBar);
-                   if (mShowNavBar) {
-                     if (mNavigationBarView == null) {
-                        createNavigationBar();
-                        }
-                  } else {
-                      if (mNavigationBarView != null){
-                         FragmentHostManager fm = FragmentHostManager.get(mNavigationBarView);
-                         mWindowManager.removeViewImmediate(mNavigationBarView);
-                         mNavigationBarView = null;
-                         fm.getFragmentManager().beginTransaction().remove(mNavigationBar).commit();
-                         mNavigationBar = null;
-                      }
-                  }
-           }
-        }
-     }
 
     /**
      * @return true if the screen is currently fully off, i.e. has finished turning off and has
