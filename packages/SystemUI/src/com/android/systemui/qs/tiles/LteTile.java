@@ -66,7 +66,7 @@ public class LteTile extends QSTileImpl<BooleanState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.BEAST;
+        return MetricsEvent.ATOM;
     }
 
     @Override

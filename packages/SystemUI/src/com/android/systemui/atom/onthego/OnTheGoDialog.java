@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.beast.onthego;
+package com.android.systemui.atom.onthego;
 
 import android.app.Dialog;
 import android.content.ContentResolver;
@@ -31,7 +31,7 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 
-import com.android.internal.util.beast.OnTheGoUtils;
+import com.android.internal.util.atom.OnTheGoUtils;
 import com.android.systemui.R;
 
 public class OnTheGoDialog extends Dialog {

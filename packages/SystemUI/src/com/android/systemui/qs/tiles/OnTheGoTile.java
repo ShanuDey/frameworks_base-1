@@ -25,8 +25,8 @@ import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 
 
-import com.android.internal.util.beast.OnTheGoActions;
-import com.android.internal.util.beast.OnTheGoUtils;
+import com.android.internal.util.atom.OnTheGoActions;
+import com.android.internal.util.atom.OnTheGoUtils;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 /** Quick settings tile: OnTheGo Mode **/
@@ -50,7 +50,7 @@ public class OnTheGoTile extends QSTileImpl<BooleanState> {
     protected void toggleState() {
         Intent service = (new Intent())
                 .setClassName("com.android.systemui",
-                "com.android.systemui.beast.onthego.OnTheGoService");
+                "com.android.systemui.atom.onthego.OnTheGoService");
         OnTheGoActions.processAction(mContext,
                 OnTheGoActions.ACTION_ONTHEGO_TOGGLE);
     }
@@ -83,13 +83,13 @@ public class OnTheGoTile extends QSTileImpl<BooleanState> {
         state.label = mContext.getString(R.string.quick_settings_onthego_label);
         state.icon = ResourceIcon.get(R.drawable.ic_qs_onthego);
         state.state = OnTheGoUtils.isServiceRunning(mContext,
-                "com.android.systemui.beast.onthego.OnTheGoService")  ?
+                "com.android.systemui.atom.onthego.OnTheGoService")  ?
                 Tile.STATE_ACTIVE : Tile.STATE_INACTIVE;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.BEAST;
+        return MetricsEvent.ATOM;
     }
 
     @Override

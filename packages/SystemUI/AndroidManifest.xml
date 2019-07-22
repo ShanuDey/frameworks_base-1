@@ -300,7 +300,7 @@
             </intent-filter>
         </receiver>
 		
-        <service android:name=".beast.onthego.OnTheGoService"
+        <service android:name=".atom.onthego.OnTheGoService"
             android:process=":onthego"
             android:exported="false" />
 
@@ -323,7 +323,7 @@
             </intent-filter>
         </receiver>
 	
-        <service android:name=".beast.screenstate.ScreenStateService"
+        <service android:name=".atom.screenstate.ScreenStateService"
                 android:exported="true" >
             <intent-filter>
                <action android:name="android.intent.action.SCREEN_STATE_SERVICE_UPDATE"/>
@@ -332,7 +332,7 @@
 
         <!-- started from PhoneWindowManager
              TODO: Should have an android:permission attribute -->
-        <service android:name=".beast.screenrecord.TakeScreenrecordService"
+        <service android:name=".atom.screenrecord.TakeScreenrecordService"
             android:process=":screenrecord"
             android:exported="false" />
 
@@ -373,7 +373,7 @@
                   android:theme="@style/ExTunerSettings"
                   android:label="@string/statusbar_items_title"
                   android:process=":tuner"
-                  android:parentActivityName="com.beast.settings.fragments.StatusBarSettings"
+                  android:parentActivityName="com.atom.settings.fragments.StatusBarSettings"
                   android:exported="true">
         </activity>
 
@@ -381,7 +381,7 @@
                   android:theme="@style/ExTunerSettings"
                   android:label="@string/nav_bar"
                   android:process=":tuner"
-                  android:parentActivityName="com.beast.settings.fragments.NavbarSettings"
+                  android:parentActivityName="com.atom.settings.fragments.NavbarSettings"
                   android:exported="true">
         </activity>
 
@@ -389,7 +389,7 @@
                   android:theme="@style/ExTunerSettings"
                   android:label="@string/tuner_lock_screen"
                   android:process=":tuner"
-                  android:parentActivityName="com.beast.settings.fragments.LockScreenSettings"
+                  android:parentActivityName="com.atom.settings.fragments.LockScreenSettings"
                   android:exported="true">
         </activity>
 
