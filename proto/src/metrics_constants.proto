@@ -6501,8 +6501,8 @@ message MetricsEvent {
 
     // Add new aosp constants above this line.
     // END OF AOSP CONSTANTS
-	// Beast constant
-    BEAST = 2000;
+	// Atom constant
+    ATOM = 2000;
     TILE_LOCATION_DETAIL = 2001;
 
   }

@@ -285,7 +285,7 @@ import com.android.internal.annotations.GuardedBy;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.beast.BeastUtils;
+import com.android.internal.util.atom.AtomUtils;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.policy.IKeyguardDismissCallback;
 import com.android.internal.policy.IShortcutService;
@@ -296,7 +296,7 @@ import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.hwkeys.ActionHandler;
 import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.internal.util.ScreenshotHelper;
-import com.android.internal.util.beast.BeastUtils;
+import com.android.internal.util.atom.AtomUtils;
 import com.android.internal.util.gesture.EdgeGesturePosition;
 import com.android.internal.util.gesture.EdgeServiceConstants;
 import com.android.internal.util.ScreenShapeHelper;
@@ -6682,7 +6682,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 return;
             }
             ComponentName cn = new ComponentName("com.android.systemui",
-                    "com.android.systemui.beast.screenrecord.TakeScreenrecordService");
+                    "com.android.systemui.atom.screenrecord.TakeScreenrecordService");
             Intent intent = new Intent();
             intent.setComponent(cn);
             ServiceConnection conn = new ServiceConnection() {
@@ -9372,13 +9372,13 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             if (ActionHandler.INTENT_SHOW_POWER_MENU.equals(action)) {
                 mHandler.removeMessages(MSG_DISPATCH_SHOW_GLOBAL_ACTIONS);
                 mHandler.sendEmptyMessage(MSG_DISPATCH_SHOW_GLOBAL_ACTIONS);
-            } else if (BeastUtils.INTENT_SCREENSHOT.equals(action)) {
+            } else if (AtomUtils.INTENT_SCREENSHOT.equals(action)) {
                 mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER,
                         TAG + "sendCustomAction permission denied");
                 mHandler.removeCallbacks(mScreenshotRunnable);
                 mScreenshotRunnable.setScreenshotType(TAKE_SCREENSHOT_FULLSCREEN);
                 mHandler.post(mScreenshotRunnable);
-            } else if (BeastUtils.INTENT_REGION_SCREENSHOT.equals(action)) {
+            } else if (AtomUtils.INTENT_REGION_SCREENSHOT.equals(action)) {
                 mContext.enforceCallingOrSelfPermission(Manifest.permission.ACCESS_SURFACE_FLINGER,
                         TAG + "sendCustomAction permission denied");
                 mHandler.removeCallbacks(mScreenshotRunnable);

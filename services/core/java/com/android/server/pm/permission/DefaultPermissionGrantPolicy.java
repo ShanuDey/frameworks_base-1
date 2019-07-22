@@ -80,7 +80,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.android.internal.util.beast.weather.WeatherClient;
+import com.android.internal.util.atom.weather.WeatherClient;
 
 /**
  * This class is the policy for granting runtime permissions to

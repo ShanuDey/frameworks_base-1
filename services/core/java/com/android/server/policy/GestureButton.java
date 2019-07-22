@@ -44,8 +44,8 @@ import android.view.WindowManagerPolicyConstants.PointerEventListener;
 import android.view.inputmethod.InputMethodManagerInternal;
 
 import com.android.internal.R;
-import com.android.internal.util.beast.BeastUtils;
-import com.android.internal.util.beast.TaskUtils;
+import com.android.internal.util.atom.AtomUtils;
+import com.android.internal.util.atom.TaskUtils;
 import com.android.server.LocalServices;
 
 public class GestureButton implements PointerEventListener {
@@ -273,7 +273,7 @@ public class GestureButton implements PointerEventListener {
     }
 
     private void triggerGestureVirtualKeypress(int keyCode) {
-        BeastUtils.sendKeycode(keyCode);
+        AtomUtils.sendKeycode(keyCode);
     }
 
     void navigationBarPosition(int displayWidth, int displayHeight, int displayRotation) {

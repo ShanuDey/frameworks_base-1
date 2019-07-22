@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.beast;
+package com.android.internal.util.atom;
 
 import android.Manifest;
 import android.app.ActivityManager;
@@ -55,7 +55,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 /**
  * Some custom utilities
  */
-public class BeastUtils {
+public class AtomUtils {
 
     public static final String INTENT_SCREENSHOT = "action_handler_screenshot";
     public static final String INTENT_REGION_SCREENSHOT = "action_handler_region_screenshot";

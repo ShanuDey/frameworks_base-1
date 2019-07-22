@@ -17,7 +17,7 @@
 * -->
 */
 
-package com.android.internal.util.beast;
+package com.android.internal.util.atom;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -41,7 +41,7 @@ public class OnTheGoActions {
 
     private static void actionOnTheGoToggle(final Context context) {
         final ComponentName cn = new ComponentName("com.android.systemui",
-                "com.android.systemui.beast.onthego.OnTheGoService");
+                "com.android.systemui.atom.onthego.OnTheGoService");
         final Intent startIntent = new Intent();
         startIntent.setComponent(cn);
         startIntent.setAction("start");
