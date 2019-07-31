@@ -303,9 +303,6 @@ public class AwesomeAnimationHelper {
             case ANIMATION_Q:
                 value = res.getString(com.android.internal.R.string.animation_q);
                 break;
-            case ANIMATION_ETHANS:
-                value = res.getString(com.android.internal.R.string.animation_ethans);
-                break;
             default:
                 value = res.getString(com.android.internal.R.string.action_null);
                 break;
