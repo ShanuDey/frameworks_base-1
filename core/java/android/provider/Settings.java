@@ -4540,7 +4540,7 @@ public final class Settings {
          *
          * @hide
          */
-        public static final String HEADS_UP_STOPLIST_VALUES = "heads_up_stoplist_values";
+        public static final HEADS_UP_STOPLIST_VALUES = "heads_up_stoplist_values";
          /**
          * Which applications to disable heads up notifications for
          *
@@ -9990,11 +9990,11 @@ public final class Settings {
             FLING_KEYBOARD_CURSORS,
             PULSE_AUTO_COLOR,
             SMARTBAR_DOUBLETAP_SLEEP
-=======
+
             WIFI_DISCONNECT_DELAY_DURATION,
             // Paranoid Android additions starts
             STATUS_BAR_BATTERY_STYLE,
->>>>>>> 0b09efa6399... base: Implement battery styles (1/2)
+
         };
 
         /**
@@ -10144,7 +10144,6 @@ public final class Settings {
             VALIDATORS.put(STATUS_BAR_BATTERY_STYLE, STATUS_BAR_BATTERY_STYLE_VALIDATOR);
             VALIDATORS.put(LOCK_SCREEN_ALLOW_PRIVATE_NOTIFICATIONS, BOOLEAN_VALIDATOR);
             VALIDATORS.put(LOCK_SCREEN_SHOW_NOTIFICATIONS, BOOLEAN_VALIDATOR);
-<<<<<<< HEAD
             VALIDATORS.put(WIFI_DISCONNECT_DELAY_DURATION, WIFI_DISCONNECT_DELAY_DURATION_VALIDATOR);
             VALIDATORS.put(VOLUME_LINK_NOTIFICATION, VOLUME_LINK_NOTIFICATION_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_HEIGHT_LANDSCAPE, NAVIGATION_BAR_HEIGHT_LANDSCAPE_VALIDATOR);
