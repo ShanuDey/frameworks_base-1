@@ -299,6 +299,13 @@
                 <action android:name="com.android.systemui.screenshot.SHOW_ERROR" />
             </intent-filter>
         </receiver>
+        <receiver android:name=".screenshot.ScreenshotServiceCaptureErrorReceiver"
+            android:process=":screenshot"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.systemui.screenshot.SHOW_ERROR" />
+            </intent-filter>
+        </receiver>
 		
         <service android:name=".atom.onthego.OnTheGoService"
             android:process=":onthego"

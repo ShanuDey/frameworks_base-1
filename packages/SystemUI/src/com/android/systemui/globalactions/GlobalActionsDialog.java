@@ -708,7 +708,7 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
     }
 
 
-    private class ScreenshotAction extends SinglePressAction implements LongPressAction {
+    private class ScreenshotAction extends SinglePressAction {
         public ScreenshotAction() {
             super(R.drawable.ic_screenshot, R.string.global_action_screenshot);
         }
@@ -722,21 +722,17 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    AtomUtils.takeScreenshot(true);
-                }
-            }, 500);
-        }
 
-        @Override
-        public boolean onLongPress() {
-            mHandler.sendEmptyMessage(MESSAGE_DISMISS);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    AtomUtils.takeScreenshot(false);
+                    try {
+                        WindowManagerGlobal.getWindowManagerService().takeOPScreenshot(1, 0);
+                    } catch (RemoteException e) {
+                        Log.e(TAG, "Error while trying to takeOPScreenshot.", e);
+                    }
+                    MetricsLogger.action(mContext,
+                            MetricsEvent.ACTION_SCREENSHOT_POWER_MENU);
+
                 }
             }, 500);
-            return true;
         }
 
         @Override
