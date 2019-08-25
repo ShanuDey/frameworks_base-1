@@ -1570,11 +1570,9 @@ public class AppOpsManager {
         private final int mProxyUid;
         private final boolean mRunning;
         private final String mProxyPackageName;
-        private final int mAllowedCount;
-        private final int mIgnoredCount;
 
         public OpEntry(int op, int mode, long time, long rejectTime, int duration,
-                int proxyUid, String proxyPackage, int allowedCount, int ignoredCount) {
+                int proxyUid, String proxyPackage) {
             mOp = op;
             mMode = mode;
             mTimes = new long[_NUM_UID_STATE];
@@ -1585,13 +1583,10 @@ public class AppOpsManager {
             mRunning = duration == -1;
             mProxyUid = proxyUid;
             mProxyPackageName = proxyPackage;
-            mAllowedCount = allowedCount;
-            mIgnoredCount = ignoredCount;
         }
 
         public OpEntry(int op, int mode, long[] times, long[] rejectTimes, int duration,
-                boolean running, int proxyUid, String proxyPackage, int allowedCount,
-                int ignoredCount) {
+                boolean running, int proxyUid, String proxyPackage) {
             mOp = op;
             mMode = mode;
             mTimes = new long[_NUM_UID_STATE];
@@ -1602,14 +1597,11 @@ public class AppOpsManager {
             mRunning = running;
             mProxyUid = proxyUid;
             mProxyPackageName = proxyPackage;
-            mAllowedCount = allowedCount;
-            mIgnoredCount = ignoredCount;
         }
 
         public OpEntry(int op, int mode, long[] times, long[] rejectTimes, int duration,
-                int proxyUid, String proxyPackage, int allowedCount, int ignoredCount) {
-            this(op, mode, times, rejectTimes, duration, duration == -1, proxyUid,
-                 proxyPackage, allowedCount, ignoredCount);
+                int proxyUid, String proxyPackage) {
+            this(op, mode, times, rejectTimes, duration, duration == -1, proxyUid, proxyPackage);
         }
 
         public int getOp() {
@@ -1676,14 +1668,6 @@ public class AppOpsManager {
             return mProxyPackageName;
         }
 
-        public int getAllowedCount() {
-            return mAllowedCount;
-        }
-
-        public int getIgnoredCount() {
-            return mIgnoredCount;
-        }
-
         @Override
         public int describeContents() {
             return 0;
@@ -1699,8 +1683,6 @@ public class AppOpsManager {
             dest.writeBoolean(mRunning);
             dest.writeInt(mProxyUid);
             dest.writeString(mProxyPackageName);
-            dest.writeInt(mAllowedCount);
-            dest.writeInt(mIgnoredCount);
         }
 
         OpEntry(Parcel source) {
@@ -1712,8 +1694,6 @@ public class AppOpsManager {
             mRunning = source.readBoolean();
             mProxyUid = source.readInt();
             mProxyPackageName = source.readString();
-            mAllowedCount = source.readInt();
-            mIgnoredCount = source.readInt();
         }
 
         public static final Creator<OpEntry> CREATOR = new Creator<OpEntry>() {
@@ -2621,13 +2601,5 @@ public class AppOpsManager {
             }
         }
         return time;
-    }
-
-    /** @hide */
-    public void resetCounters() {
-        try {
-            mService.resetCounters();
-        } catch (RemoteException e) {
-        }
     }
 }
