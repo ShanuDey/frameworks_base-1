@@ -344,7 +344,6 @@
             android:exported="false" />
 
         <!-- Smart Pixels -->
-        <!-- Smart Pixels -->
         <service android:name=".smartpixels.SmartPixelsService"
             android:enabled="true" />
         <receiver android:name=".smartpixels.SmartPixelsReceiver">
